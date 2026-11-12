@@ -61,7 +61,15 @@ function displayAssignments() {
         });
 
         
-listItem.appendChild(completeButton);
+// Create a container to hold both buttons
+const buttonContainer = document.createElement("div");
+buttonContainer.className = "button-container";
+
+// Give the completion button its own CSS class
+completeButton.className = "complete-btn";
+
+// Add completion button to container
+buttonContainer.appendChild(completeButton);
 
 // Create a Delete button
 const deleteButton = document.createElement("button");
@@ -86,9 +94,18 @@ deleteButton.addEventListener("click", function() {
 });
 
 // Add the Delete button to the assignment card
-listItem.appendChild(deleteButton);
+// Give the delete button its own CSS class
+deleteButton.className = "delete-btn";
 
+// Add delete button to container
+buttonContainer.appendChild(deleteButton);
+
+// Add both buttons to the assignment card
+listItem.appendChild(buttonContainer);
+
+// Display the assignment card
 assignmentList.appendChild(listItem);
+
 
     });
 }

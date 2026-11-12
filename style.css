@@ -83,3 +83,50 @@ button:hover {
     border-left: 5px solid #3498db;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
+
+
+/* Arrange assignment text and buttons horizontally */
+#assignment-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Keep buttons together on the right */
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* Style both assignment buttons */
+.button-container button {
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+/* Green completion button */
+.complete-btn {
+    background-color: #28a745;
+}
+
+.complete-btn:hover {
+    background-color: #218838;
+}
+
+/* Red delete button */
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Style completed buttons */
+.complete-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
