@@ -60,8 +60,36 @@ function displayAssignments() {
             displayAssignments();
         });
 
-        listItem.appendChild(completeButton);
-        assignmentList.appendChild(listItem);
+        
+listItem.appendChild(completeButton);
+
+// Create a Delete button
+const deleteButton = document.createElement("button");
+deleteButton.textContent = "Delete";
+
+// Delete the selected assignment when clicked
+deleteButton.addEventListener("click", function() {
+
+    // Find the assignment's position in the array
+    const index = assignments.indexOf(homework);
+
+    // Remove the assignment from the array
+    if (index !== -1) {
+        assignments.splice(index, 1);
+    }
+
+    // Save the updated list
+    saveAssignments();
+
+    // Refresh the displayed assignments
+    displayAssignments();
+});
+
+// Add the Delete button to the assignment card
+listItem.appendChild(deleteButton);
+
+assignmentList.appendChild(listItem);
+
     });
 }
 
