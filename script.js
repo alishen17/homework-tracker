@@ -16,6 +16,26 @@ function saveAssignments() {
     );
 }
 
+/* Calculate and update dashboard statistics */
+function updateDashboard() {
+
+    // Count all assignments
+    const total = assignments.length;
+
+    // Count completed assignments
+    const completed = assignments.filter(function(homework) {
+        return homework.completed === true;
+    }).length;
+
+    // Calculate pending assignments
+    const pending = total - completed;
+
+    // Display results on the webpage
+    document.getElementById("total-count").textContent = total;
+    document.getElementById("pending-count").textContent = pending;
+    document.getElementById("completed-count").textContent = completed;
+}
+
 /* Display all assignments on the webpage */
 function displayAssignments() {
 
@@ -107,7 +127,10 @@ listItem.appendChild(buttonContainer);
 assignmentList.appendChild(listItem);
 
 
-    });
+        });
+
+    // Refresh dashboard statistics
+    updateDashboard();
 }
 
 /* Handle new assignment submissions */
