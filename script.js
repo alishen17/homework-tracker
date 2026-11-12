@@ -34,6 +34,21 @@ function updateDashboard() {
     document.getElementById("total-count").textContent = total;
     document.getElementById("pending-count").textContent = pending;
     document.getElementById("completed-count").textContent = completed;
+
+// Calculate completion percentage
+// If there are no assignments, display 0%
+const percentage = total === 0
+    ? 0
+    : Math.round((completed / total) * 100);
+
+// Update the percentage label
+document.getElementById("progress-percentage").textContent =
+    percentage + "%";
+
+// Update the progress bar width
+document.getElementById("progress-fill").style.width =
+    percentage + "%";
+
 }
 
 /* Display all assignments on the webpage */

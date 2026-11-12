@@ -181,3 +181,42 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* Progress section container */
+#progress-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Progress heading and percentage */
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.progress-header h3 {
+    margin: 0;
+    color: #34495e;
+}
+
+/* Progress bar background */
+.progress-bar {
+    background-color: #e9ecef;
+    height: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Green progress fill */
+#progress-fill {
+    background-color: #28a745;
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
